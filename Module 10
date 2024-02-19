@@ -1,0 +1,60 @@
+import processing.core.PApplet;
+
+public class Program extends PApplet {
+
+    // Do not change any of the code above   
+//  <-------------------------------------->
+
+  
+    /*
+    Mrs. Williams
+    Block __: Stop the Ball
+    Directions:
+    Code Along with the video
+    */
+
+    float diameter;
+    float xPosition;
+    float step;
+
+    public void setup() {
+        
+        size(600, 375);
+        diameter = 25;
+        xPosition = diameter / 2;
+        step = 2;
+        
+    }
+    
+    
+    
+    public void draw() {
+        background(0);
+        fill(255);
+        
+        ellipse(xPosition, height / 2, diameter, diameter);
+        
+        if(xPosition + diameter /2 >= width){
+            step = step * -1;
+        }
+            xPosition = xPosition + step;
+        
+    }
+    
+    
+    
+    
+    
+    
+
+//  <-------------------------------------->
+    // Do not change any of the code below
+
+
+    public static void main(String[] args){
+    	String[] processingArgs = {"Program"};
+    	Program program = new Program();
+    	PApplet.runSketch(processingArgs, program);
+    	System.out.println("Scoot The Ball.");
+    }
+}
